@@ -21,4 +21,9 @@ class InboxServiceProvider extends PackageServiceProvider
             ->hasMigration('create_laravel-inbox_table')
             ->hasCommand(InboxCommand::class);
     }
+
+    public function boot(): void
+    {
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+    }
 }
