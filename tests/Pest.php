@@ -1,4 +1,4 @@
-<?php
+v<?php
 
 use MG\Inbox\Tests\TestCase;
 

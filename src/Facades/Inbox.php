@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Facade;
  */
 class Inbox extends Facade
 {
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
-        return \MG\Inbox\Inbox::class;
+        return 'inbox';
     }
 }
