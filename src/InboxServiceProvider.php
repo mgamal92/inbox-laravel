@@ -2,9 +2,9 @@
 
 namespace MG\Inbox;
 
+use MG\Inbox\Commands\InboxCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use MG\Inbox\Commands\InboxCommand;
 
 class InboxServiceProvider extends PackageServiceProvider
 {
