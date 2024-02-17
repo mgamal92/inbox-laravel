@@ -20,11 +20,12 @@ The Laravel Inbox Package offers a streamlined approach to integrating a messagi
 
 ## Features
 
-- User-to-user messaging
-- Message threading for conversation tracking
-- Read/unread status management
-- Easy Laravel integration
-- Customizable message models
+- [ ] Send messages to other users
+- [ ] Receive messages from other users
+- [ ] Mark messages as read or unread
+- [ ] Delete messages with soft delete
+- [ ] Star messages
+
 
 ## Requirements
 

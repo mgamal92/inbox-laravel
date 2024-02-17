@@ -18,7 +18,6 @@ class InboxServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-inbox')
             ->hasConfigFile()
-            ->hasViews()
             ->hasMigration('create_laravel-inbox_table')
             ->hasCommand(InboxCommand::class);
     }
