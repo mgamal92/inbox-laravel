@@ -5,4 +5,3 @@ it('can send a message', function () {
     $result = $inbox->send('Hello', 'Taylor');
     expect($result)->toBe('Message sent to Taylor');
 });
-
