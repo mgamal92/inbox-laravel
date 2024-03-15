@@ -56,13 +56,13 @@ class InboxService {
 
     }
 
-    private function validateMessageBelongsToReceiver(Inbox $message, int|string|null $receiver_id): void {
+    private function validateMessageBelongsToReceiver(Inbox $message, int $receiver_id): void {
         if ($message->receiver_id !== $receiver_id){
             $this->unAuthorized();
         }
     }
 
-    private function validateMessageBelongsSender(Inbox $message, int|string|null $sender_id): void {
+    private function validateMessageBelongsSender(Inbox $message, int $sender_id): void {
         if ($message->sender_id !== $sender_id){
            $this->unAuthorized();
         }
