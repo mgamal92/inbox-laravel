@@ -3,6 +3,8 @@
 namespace MG\Inbox;
 
 use MG\Inbox\Commands\InboxCommand;
+use MG\Inbox\Services\InboxRepository;
+use MG\Inbox\Services\InboxService;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -25,5 +27,12 @@ class InboxServiceProvider extends PackageServiceProvider
     public function boot(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+    }
+
+    public function register()
+    {
+        $this->app->singleton('inbox', function ($app) {
+            return new InboxService($app->make(InboxRepository::class));
+        });
     }
 }
