@@ -4,6 +4,24 @@
 return [
     /*
     |--------------------------------------------------------------------------
+    | Users Table
+    |--------------------------------------------------------------------------
+    |
+    | This option specifies the default table name used for the users in the
+    | application. By default, Laravel assumes the users' table name to be
+    | 'users'. However, you can customize this by setting the 'USERS_TABLE'
+    | environment variable in your .env file. This allows you to use a
+    | different table name for your users, which might be useful if you
+    | have an existing database schema or naming convention.
+    |
+    | Example usage in your .env file:
+    |   USERS_TABLE=my_users
+    |
+    */
+
+    'users_table' => env('USERS_TABLE' , 'users'),
+    /*
+    |--------------------------------------------------------------------------
     | Database Search Operator
     |--------------------------------------------------------------------------
     |
@@ -17,5 +35,6 @@ return [
     |
     */
     'database_search_operator' => env('DATABASE_SEARCH_OPERATOR' , 'like'),
+
 
 ];
