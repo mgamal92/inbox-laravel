@@ -46,6 +46,11 @@ composer require mgamal/laravel-inbox
 php artisan vendor:publish --provider="MG\LaravelInbox\InboxServiceProvider"
 ```
 
+- You many need to run this commad for config file 
+```bash
+php artisan vendor:publish --tag=config
+```
+
 - Run migrations to create necessary tables:
 
 ```bash

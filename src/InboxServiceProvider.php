@@ -27,6 +27,9 @@ class InboxServiceProvider extends PackageServiceProvider
     public function boot(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->publishes([
+            __DIR__.'/../config/inbox.php' => config_path('inbox.php'),
+        ], 'config');
     }
 
     public function register()

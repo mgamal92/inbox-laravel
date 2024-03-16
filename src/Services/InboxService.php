@@ -12,11 +12,32 @@ class InboxService {
     public function __construct(private InboxRepository $repository) {
     }
 
+
+    public function getUserInbox(int $user_id = null, int $pagination = null) {
+        if (is_null($user_id)){
+            $user_id = auth()->id();
+        }
+        $query =  $this->repository->baseQuery([
+            'user_id' => $user_id,
+        ]);
+
+        if ($pagination){
+            return $query->paginate($pagination);
+        }
+
+        return $query->get();
+
+    }
+
+    public function getQuery($params = []) : \Illuminate\Database\Eloquent\Builder  {
+        return $this->repository->baseQuery($params);
+    }
+
     public function send(array $params, int $receiver_id) {
         $params['sender_id'] = auth()->id();
         $params['receiver_id'] = $receiver_id;
         return DB::transaction(function () use ($params){
-            $inbox = new InboxService();
+            $inbox = new Inbox();
             $inbox->fill($params);
             $inbox->save();
             return $inbox;
