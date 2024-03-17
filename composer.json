@@ -1,6 +1,12 @@
 {
     "name": "mgamal/laravel-inbox",
     "description": "This is my package laravel-inbox",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url" : "https://github.com/mgamal92/inbox-laravel"
+        }
+    ],
     "keywords": [
         "Mohamed Gamal",
         "laravel",
