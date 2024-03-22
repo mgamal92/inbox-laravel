@@ -16,7 +16,7 @@ jobs:
         fetch-depth: 0  # Ensures full history is fetched
 
     - name: Add template repository as remote
-      run: git remote add template https://github.com/BaristaPHP/laravel-package-template
+      run: git remote add template git@github.com:BaristaPHP/laravel-package-template.git
 
     - name: Fetch latest changes from template
       run: git fetch template
