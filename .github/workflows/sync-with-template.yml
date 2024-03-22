@@ -1,9 +1,10 @@
 name: Sync with Template
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Runs at midnight UTC every day
-
+  push:
+    branches:
+      - 1.x
+      
 jobs:
   sync:
     runs-on: ubuntu-latest
