@@ -1,0 +1,26 @@
+name: Sync with Template
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs at midnight UTC every day
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout old repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # Ensures full history is fetched
+
+    - name: Add template repository as remote
+      run: git remote add template https://github.com/BaristaPHP/laravel-package-template
+
+    - name: Fetch latest changes from template
+      run: git fetch template
+
+    - name: Merge changes from template
+      run: |
+        git merge template/master --allow-unrelated-histories
+        git push origin master
